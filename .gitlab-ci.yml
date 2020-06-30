@@ -1,0 +1,12 @@
+stages:
+-test
+
+test_app:
+  image:python:latest
+  stage:test
+  before_scripts:
+  - python -m venv venv
+  - source venv/bin/activate
+  script:
+  - python -m pip install -r requirements.txt
+  - python backend/unittests.py
